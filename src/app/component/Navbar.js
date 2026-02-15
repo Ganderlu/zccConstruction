@@ -3,22 +3,40 @@
 import Link from "next/link";
 import { links } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const formatLabel = (name) =>
+    name
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+
+  const handleToggle = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
 
   return (
-    <div className="navbar bg-white text-black">
+    <div className="navbar bg-white text-black relative z-50">
       <div className="navbar-start">
-        <div className="dropdown dropdown-blur-xl lg:hidden h-full w-full">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost text-info-content lg:hidden"
-          >
+        <button
+          type="button"
+          onClick={handleToggle}
+          className="btn btn-ghost text-black lg:hidden"
+          aria-label="Toggle navigation"
+          aria-expanded={isOpen}
+        >
+          {isOpen ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -27,50 +45,37 @@ const Navbar = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
+                d="M6 18L18 6M6 6l12 12"
               />
             </svg>
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-white rounded-box z-[1] mt-3 w-screen h-80 shadow"
-          >
-            {links.map((link) => {
-              const label = link.name
-                .split(" ")
-                .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                .join(" ");
-
-              return (
-                <li key={link.id}>
-                  <Link
-                    className={
-                      pathname === link.link ? "text-red-900" : "text-black"
-                    }
-                    href={link.link}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          )}
+        </button>
         <img
           className="pl-1"
           src="/zandar.jpg"
           width="100"
           alt="Zander's Construction Company logo"
         />
-        {/* <a className="btn btn-ghost text-xl">daisyUI</a> */}
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           {links.map((link) => {
-            const label = link.name
-              .split(" ")
-              .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(" ");
+            const label = formatLabel(link.name);
 
             return (
               <li key={link.id}>
@@ -106,10 +111,47 @@ const Navbar = () => {
         </button>
         <Link
           href="/contact"
-          className="btn bg-red-800 text-white lg:flex border-none rounded-full px-6"
+          className="btn bg-red-800 text-white hidden lg:flex border-none rounded-full px-6"
         >
           Contact us
         </Link>
+      </div>
+
+      <div
+        className={`lg:hidden absolute inset-x-0 top-full border-t bg-white shadow-md transition-all duration-200 ${
+          isOpen ? "opacity-100 visible" : "invisible opacity-0"
+        }`}
+      >
+        <ul className="flex flex-col px-4 py-4 space-y-2">
+          {links.map((link) => {
+            const label = formatLabel(link.name);
+
+            return (
+              <li key={link.id}>
+                <Link
+                  href={link.link}
+                  className={`block py-2 text-base ${
+                    pathname === link.link
+                      ? "text-red-900 font-semibold"
+                      : "text-black"
+                  }`}
+                  onClick={handleClose}
+                >
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
+          <li>
+            <Link
+              href="/contact"
+              className="btn mt-2 w-full bg-red-800 text-white border-none rounded-full"
+              onClick={handleClose}
+            >
+              Contact us
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
   );

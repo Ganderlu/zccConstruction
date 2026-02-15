@@ -19,7 +19,7 @@ const Hero = () => {
                 Vision To <span className="text-red-800">Reality</span>
               </h1>
 
-              <p className="mb-7 text-zinc-300 font-sans text-sm sm:text-base lg:text-lg md:max-w-xl font-light leading-relaxed">
+              <p className="mb-7 text-white font-sans text-sm sm:text-base lg:text-lg md:max-w-xl font-normal leading-relaxed">
                 We provide the best architectural design,
                 construction, and building maintenance services
                 for you.
