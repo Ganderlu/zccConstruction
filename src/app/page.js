@@ -7,7 +7,7 @@ const Home = () => {
       <Hero />
 
       <section className="bg-white">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-5 py-16 lg:flex-row">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-5 py-12 lg:flex-row animate-fade-up">
           <div className="flex justify-center lg:w-1/2">
             <img
               src="/abb.jpg"
@@ -25,11 +25,11 @@ const Home = () => {
               About Us
             </h2>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-zinc-700">
-              Zander&apos;s Construction Company provides comprehensive services for
-              the planning, design, engineering, construction, operation, and
-              maintenance of buildings, infrastructure, and industrial projects.
-              With over 5 years of experience, we have built a solid reputation
-              on professionalism, integrity, and service excellence.
+              Zander&apos;s Construction Company provides comprehensive services
+              for the planning, design, engineering, construction, operation,
+              and maintenance of buildings, infrastructure, and industrial
+              projects. With over 5 years of experience, we have built a solid
+              reputation on professionalism, integrity, and service excellence.
             </p>
             <div className="pt-6">
               <Link
@@ -44,21 +44,22 @@ const Home = () => {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto flex max-w-6xl justify-center px-5 py-16">
+        <div className="mx-auto flex max-w-6xl justify-center px-5 py-12 animate-fade-up">
           <div className="w-full overflow-hidden rounded-2xl shadow-2xl">
-            <iframe
+            <video
               className="h-[220px] w-full sm:h-[320px] lg:h-[450px]"
-              src="https://www.youtube.com/embed/vRjGVS1FIwk"
-              title="Zander's Construction Company overview"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+              src="/zander1.mp4"
+              controls
+              poster="/construction.jpg"
+            >
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto max-w-4xl px-5 py-16 text-center lg:text-left">
+        <div className="mx-auto max-w-4xl px-5 py-12 text-center lg:text-left animate-fade-up">
           <p className="text-sm font-semibold uppercase tracking-wide text-red-800">
             Why choose us
           </p>
@@ -76,7 +77,7 @@ const Home = () => {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-5 py-16 lg:flex-row">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-5 py-12 lg:flex-row animate-fade-up">
           <div className="order-2 w-full lg:order-1 lg:w-1/2">
             <p className="text-sm font-semibold uppercase tracking-wide text-red-800">
               Excellence in delivery
@@ -85,11 +86,11 @@ const Home = () => {
               Our Services
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-700">
-              From minor works to large-scale infrastructure, Zander&apos;s Construction
-              Company has a proven record of engineering excellence. We combine
-              technical expertise, local knowledge, and meticulous project
-              management to deliver projects safely, on time, and to the highest
-              quality standards.
+              From minor works to large-scale infrastructure, Zander&apos;s
+              Construction Company has a proven record of engineering
+              excellence. We combine technical expertise, local knowledge, and
+              meticulous project management to deliver projects safely, on time,
+              and to the highest quality standards.
             </p>
           </div>
           <div className="order-1 flex justify-center lg:order-2 lg:w-1/2">
@@ -104,8 +105,16 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-red-800">
-        <div className="mx-auto flex h-80 max-w-6xl flex-col items-center justify-center px-5 text-center">
+      <section
+        className="relative"
+        style={{
+          backgroundImage: "url('/abb.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-red-800/90" />
+        <div className="relative mx-auto flex h-80 max-w-6xl flex-col items-center justify-center px-5 text-center animate-fade-up">
           <p className="text-3xl font-bold text-white sm:text-4xl">
             Let&apos;s build the future. Together.
           </p>
