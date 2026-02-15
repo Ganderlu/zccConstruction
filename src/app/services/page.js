@@ -10,10 +10,10 @@ const Services = () => {
           className="w-full h-full object-cover z-0"
           alt="construction site"
         />
-        <div className="overlay absolute z-10 w-full h-full flex flex-col justify-center items-center sm:items-start sm:pl-8 px-4">
+        <div className="overlay absolute z-10 w-full h-full flex flex-col justify-center items-center sm:items-start sm:pl-8 px-4 animate-fade-in-soft">
           <div className="container mx-auto">
-            <div className="max-w-md text-white ">
-              <h2 className="mb-5 text-5xl pt-20  font-bold text-center">
+            <div className="max-w-md text-white animate-fade-up">
+              <h2 className="mb-5 pt-20 text-4xl font-bold text-center sm:text-5xl">
                 Our Services
               </h2>
             </div>
@@ -22,7 +22,7 @@ const Services = () => {
       </div>
 
       <section className="bg-white">
-        <div className="mx-auto flex max-w-6xl items-center px-5 py-16">
+        <div className="mx-auto flex max-w-6xl items-center px-5 py-12 animate-fade-up">
           <div className="max-w-xl">
             <p className="text-sm font-semibold uppercase tracking-wide text-red-800">
               Creativity & innovation
@@ -30,7 +30,7 @@ const Services = () => {
             <h2 className="mt-3 text-3xl font-bold text-black sm:text-4xl">
               Our Vision
             </h2>
-            <p className="mb-5 pt-6 text-lg font-serif leading-relaxed text-zinc-700">
+            <p className="mb-5 pt-6 text-lg leading-relaxed text-zinc-700">
               From minor works to major infrastructure projects, Zander&apos;s
               Construction Company has a proven record of engineering excellence
               in Nigeria. We combine local and international experience to
@@ -42,7 +42,7 @@ const Services = () => {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-5 py-16 lg:flex-row">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-5 py-12 lg:flex-row animate-fade-up">
           <div className="flex justify-center lg:w-1/2">
             <img
               src="/f13.jpg"
@@ -59,7 +59,7 @@ const Services = () => {
             <h2 className="mt-3 text-3xl font-bold text-black sm:text-4xl">
               Building Construction
             </h2>
-            <p className="mt-6 text-lg font-serif leading-relaxed text-zinc-700">
+            <p className="mt-6 text-lg leading-relaxed text-zinc-700">
               We deliver robust residential, commercial, and industrial
               buildings, carefully considering construction costs, lifecycle
               performance, safety regulations, and potential risks. Every
@@ -70,7 +70,7 @@ const Services = () => {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-5 py-16 lg:flex-row">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-5 py-12 lg:flex-row animate-fade-up">
           <div className="lg:w-1/2">
             <p className="text-sm font-semibold uppercase tracking-wide text-red-800">
               Infrastructure & networks
@@ -78,7 +78,7 @@ const Services = () => {
             <h2 className="mt-3 text-3xl font-bold text-black sm:text-4xl">
               Civil Engineering
             </h2>
-            <p className="mt-6 text-lg font-serif leading-relaxed text-zinc-700">
+            <p className="mt-6 text-lg leading-relaxed text-zinc-700">
               We design, construct, and maintain critical infrastructure,
               including roads, bridges, canals, airports, water systems, and
               structural components of buildings. Our team ensures durability,
@@ -98,7 +98,7 @@ const Services = () => {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-5 py-16 lg:flex-row">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-10 px-5 py-12 lg:flex-row animate-fade-up">
           <div className="flex justify-center lg:w-1/2">
             <img
               src="/f13.jpg"
@@ -115,7 +115,7 @@ const Services = () => {
             <h2 className="mt-3 text-3xl font-bold text-black sm:text-4xl">
               Project Management
             </h2>
-            <p className="mt-6 text-lg font-serif leading-relaxed text-zinc-700">
+            <p className="mt-6 text-lg leading-relaxed text-zinc-700">
               Beyond construction, we provide full project lifecycle management,
               from planning and design coordination to delivery and maintenance,
               ensuring smooth execution and transparent communication.
